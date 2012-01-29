@@ -11,22 +11,22 @@ class Ventana extends JFrame implements ActionListener
 {
 	private Dimension dim;
 	private ContenedorPrincipal Contenedor;
-	
+
 	JMenu Formato      = new JMenu("Formato");
 	JMenu Presentacion = new JMenu("Precentacion");
 	JMenu Ayuda        = new JMenu("Ayuda");
-	
+
 	//Menu
 	private JMenuBar  MBarra    =new JMenuBar();
-	
+
 	//Menu Archivo
 	private JMenu Archivo       = new JMenu("Archivo");
 	private JMenuItem MNuevo    =new JMenuItem("Nuevo");
 	private JMenuItem MAbrir    =new JMenuItem("Abrir");
-	private	JMenuItem MSalir    =new JMenuItem("Salir");	
+	private	JMenuItem MSalir    =new JMenuItem("Salir");
 	private JMenuItem MGuardar  =new JMenuItem("Guardar");
 	private JMenuItem MImprimir =new JMenuItem("Imprimir");
-	
+
     //Menu Editar
 	private JMenu Editar        =new JMenu("Editar");
 	private JMenuItem MCortar   =new JMenuItem("Cortar");
@@ -35,13 +35,13 @@ class Ventana extends JFrame implements ActionListener
 	private JMenuItem MBuscar   =new JMenuItem("Buscar");
 	private JMenuItem MRemplazar=new JMenuItem("Reemplazar");
 	private JMenuItem MSelec    =new JMenuItem("Seleccionar todo");
-	
+
 	// Menu de Ver
 	private JMenu Ver              = new JMenu("Ver");
 	private JMenuItem normal       = new JMenuItem("normal");
     private JMenuItem organizador  = new JMenuItem("organizador de diapositivas");
     private JMenuItem precentacion = new JMenuItem("precentacion");
-    
+
     // Menu Insertar
     private JMenu Insertar        = new JMenu("Insertar");
     private JMenuItem diapositiva = new JMenuItem("diapositiva");
@@ -49,8 +49,8 @@ class Ventana extends JFrame implements ActionListener
     private JMenuItem numpag      = new JMenuItem("numero de paginas");
     private JMenuItem imagen      = new JMenuItem("imagen");
     private JMenuItem video       = new JMenuItem("video sonido");
-    	
-	//Imagenes 
+
+	//Imagenes
 	private ImageIcon INuevo   =new ImageIcon("imagen/nuevo1.gif");
 	private ImageIcon IAbrir   =new ImageIcon("imagen/abrir.jpg");
 	private ImageIcon ICopiar  =new ImageIcon("imagen/copiar1.jpg");
@@ -63,52 +63,52 @@ class Ventana extends JFrame implements ActionListener
 	private ImageIcon IPdf     =new ImageIcon("imagen/pdf.jpg");
 	private ImageIcon IAtras   =new ImageIcon("imagen/atras.gif");
 	private ImageIcon IAdelante=new ImageIcon("imagen/adelante.gif");
-	
+
 	//Toolbar
-	private JToolBar TBarra =new JToolBar();	
+	private JToolBar TBarra =new JToolBar();
 	private JToolBar TEditar= new JToolBar();
-		
+
 	private JButton BNuevo    =new JButton(INuevo);
 	private JButton BAbrir    =new JButton(IAbrir);
 	private	JButton BCopiar   =new JButton(ICopiar);
 	private	JButton BCortar   =new JButton(ICortar);
-	private	JButton BPegar    =new JButton(IPegar);	
+	private	JButton BPegar    =new JButton(IPegar);
 	private	JButton BGuardar  =new JButton(IGuardar);
 	private	JButton BPdf      =new JButton(IPdf);
 	private	JButton BImpresora= new JButton(IImprimir);
 	private	JButton BAdelante = new JButton(IAdelante);
 	private	JButton BAtras    = new JButton(IAtras);
-		
-	//PopUpMenu Boton derecho	
-	private JPopupMenu PopMenu  =new JPopupMenu (); 
+
+	//PopUpMenu Boton derecho
+	private JPopupMenu PopMenu  =new JPopupMenu ();
   	private JMenuItem PopCortar =new JMenuItem ("Cortar");
   	private JMenuItem PopCopiar =new JMenuItem ("Copiar");
   	private JMenuItem PopPegar  =new JMenuItem ("Pegar");
   	private JMenuItem PopSelTodo=new JMenuItem ("Seleccionar Todo");
-	
+
   	private	String nombre=" "; //nobre del programa
-	
+
 	//Paleta de colores
 	JButton colorTexto   = new JButton("    ");
 	JLabel lcolorTexto   = new JLabel("Texto: ");
 	JButton colorFondo   = new JButton("    ");
     JLabel lcolorFondo   = new JLabel("Fondo: ");
-	JColorChooser colores= new JColorChooser(); 
+	JColorChooser colores= new JColorChooser();
 
 	//cajas de texto
-	JTextArea Texto  = new JTextArea();	
-	JTextArea Errores= new JTextArea(6,1);	
+	JTextArea Texto  = new JTextArea();
+	JTextArea Errores= new JTextArea(6,1);
 	String Copiar="";
-	
+
 	public Ventana(){
-	
+
 		dim=Toolkit.getDefaultToolkit().getScreenSize();
-		Contenedor = new ContenedorPrincipal(dim); 
-		
+		Contenedor = new ContenedorPrincipal(dim);
+
 		//Menu Archivo
 		Archivo.add(MNuevo);
 		MNuevo.addActionListener(this);
-		Archivo.add(MAbrir);		
+		Archivo.add(MAbrir);
 		MAbrir.addActionListener(this);
 		Archivo.add(MSalir);
 		MSalir.addActionListener(this);
@@ -122,7 +122,7 @@ class Ventana extends JFrame implements ActionListener
 		Archivo.add(MSalir);
 		MSalir.setIcon(ISalir);
 		MSalir.addActionListener(this);
-		
+
 		//Menu Editar
 		Editar.add(MCortar);
 		MCortar.setIcon(ICortar);
@@ -131,7 +131,7 @@ class Ventana extends JFrame implements ActionListener
 		MCopiar.setIcon(ICopiar);
 		MCopiar.addActionListener(this);
 		Editar.add(MPegar);
-		MPegar.setIcon(IPegar);		
+		MPegar.setIcon(IPegar);
 		Editar.addSeparator();
 		Editar.add(MBuscar);
 		MBuscar.setIcon(IBuscar);
@@ -142,12 +142,12 @@ class Ventana extends JFrame implements ActionListener
 		Editar.addSeparator();
 		Editar.add(MSelec);
 		MSelec.addActionListener(this);
-		
+
 		//Menu Ver
 		Ver.add(normal);
 	    Ver.add(organizador);
 	    Ver.add(precentacion);
-		
+
 	    // Menu Insertar
 	    Insertar.add(diapositiva);
         Insertar.add(numpag);
@@ -155,7 +155,7 @@ class Ventana extends JFrame implements ActionListener
         Insertar.addSeparator();
         Insertar.add(imagen);
         Insertar.add(video);
-	    
+
 		MBarra.add(Archivo);
 		MBarra.add(Editar);
 		MBarra.add(Ver);
@@ -163,39 +163,39 @@ class Ventana extends JFrame implements ActionListener
 		MBarra.add(Formato);
 		MBarra.add(Presentacion);
 		MBarra.add(Ayuda);
-		
+
 		setJMenuBar(MBarra);
-		
-		
-		
+
+
+
 		//ToolBar
 		TBarra.add(BNuevo);
 		BNuevo.addActionListener(this);
-	
+
 		TBarra.add(BAbrir);
 		BAbrir.addActionListener(this);
-	
+
 		TBarra.add(BGuardar);
 		BGuardar.addActionListener(this);
-		
+
 		TBarra.addSeparator();
 		TBarra.add(BPdf);
 		TBarra.add(BImpresora);
-		
+
 		TBarra.addSeparator();
-		TBarra.add(BCopiar);		
+		TBarra.add(BCopiar);
 		BCopiar.addActionListener(this);
-		
+
 		TBarra.add(BCortar);
 		BCortar.addActionListener(this);
-		
-		TBarra.add(BPegar);		
+
+		TBarra.add(BPegar);
 		BPegar.addActionListener(this);
-	
+
 		TBarra.addSeparator();
 		TBarra.add(BAtras);
 		TBarra.add(BAdelante);
-		
+
 		BGuardar.setToolTipText ("Guardar");
 		BNuevo.setToolTipText ("Nuevo");
 		BAbrir.setToolTipText ("Abrir");
@@ -206,52 +206,52 @@ class Ventana extends JFrame implements ActionListener
 		BImpresora.setToolTipText ("Imprimir");
 		BAdelante.setToolTipText ("Adelante");
 		BAtras.setToolTipText ("Atras");
-		
+
 		//Colores de fondo y texto
 	//	TBarra.addSeparator();
 		TEditar.add(lcolorTexto);
 		TEditar.add(colorTexto);
 		colorTexto.addActionListener(this);
 		colorTexto.setBackground(Color.WHITE);
-		
+
 	    TEditar.addSeparator();
 		TEditar.add(lcolorFondo);
 		TEditar.add(colorFondo);
 		colorFondo.addActionListener(this);
 		colorFondo.setBackground(Color.WHITE);
-		
+
 		TBarra.setLocation(0, 0);
 		TEditar.setLocation(0,30 );
 		add(TBarra,"North");
 	//	add(TBarra);
-		Texto.requestFocus();		
+		Texto.requestFocus();
 		TBarra.setFloatable(false);
-	    
-	//	add(TEditar,"South");		
+
+	//	add(TEditar,"South");
 	//	add(TEditar);
 	//	TEditar.setFloatable(false);
-	
+
 		//PopUpMenu
 		PopCortar.addActionListener (this);
-        PopMenu.add (PopCortar); 
+        PopMenu.add (PopCortar);
         PopCopiar.addActionListener(this);
         PopMenu.add(PopCopiar);
         PopPegar.addActionListener(this);
         PopMenu.add(PopPegar);
-               
+
         PopCortar.setIcon (ICortar);
         PopCopiar.setIcon(ICopiar);
         PopPegar.setIcon(IPegar);
         Texto.setComponentPopupMenu (PopMenu);
-	/*	
+	/*
 		//Aadir barras de scroll a la caja de texto principal
 		JScrollPane barrillas=new JScrollPane(Texto,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		add(barrillas);
-		
+
 		//Aadir barras de scroll a la caja de texto de los errores
 		JScrollPane barrasError=new JScrollPane(Errores,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		add(barrasError,"South");
-		
+
 		*/
 		//Cerrar Ventana
 		addWindowListener(new WindowAdapter()
@@ -261,53 +261,53 @@ class Ventana extends JFrame implements ActionListener
 			 	System.exit(0);
 			 }
 		});
-		
-		setTitle("Editor de Precentaciones ");	
+
+		setTitle("Editor de Precentaciones ");
 	    setSize(dim.width,dim.height);
 	    add(Contenedor,"Center");
 	    //setLayout(null);
 		setVisible(true);
-			
+
 	}
-	
-	
+
+
 		public void actionPerformed(ActionEvent ae)
 		 {
 		 	if(ae.getSource()==MImprimir) imprimir();
-		 			 	
+
 		 	if(ae.getSource()==MSalir) dispose();
-		 	
+
 		 	if(ae.getSource()==MNuevo || ae.getSource()==BNuevo) Texto.setText("");
-		 	
+
 		 	if(ae.getSource()==MCopiar || ae.getSource()==PopCopiar || ae.getSource()==BCopiar)	Texto.copy();
-		 	
+
 		 	if(ae.getSource()==MPegar || ae.getSource()==PopPegar || ae.getSource()==BPegar)	Texto.paste();
-		 	
+
 		 	if(ae.getSource()==MCortar || ae.getSource()==PopCortar || ae.getSource()==BCortar) Texto.cut();
-		 	
-		 	if(ae.getSource()==MSelec) 
+
+		 	if(ae.getSource()==MSelec)
 		 	{
 		 		Texto.requestFocus();
 		 	    Texto.selectAll();
-		 	}		
-		 	
+		 	}
+
 		 	if(ae.getSource()==BAbrir) Abrir();
-		 	
+
 		 	if(ae.getSource()==BGuardar )
 		 	{
 		 		Guardar ();
 		 	}
-		 	
+
 		 	if(ae.getSource()==MAbrir)
 		 	{
-		 	    Abrir ();	
+		 	    Abrir ();
 		 	}
-		 	
+
 		 	if(ae.getSource()==MGuardar)
 		 	{
-			Guardar (); 	   
+			Guardar ();
 		 	}
-		 	
+
 		/* 	if(ae.getSource()==MBuscar)
 		 	{
 		 		Busca Bes=new Busca(this,"Buscar...",true);
@@ -316,7 +316,7 @@ class Ventana extends JFrame implements ActionListener
 		 	{
 		 		BuscaRemplaza ByR=new BuscaRemplaza(this,"Buscar y Reemplazar",true);
 		 	}
-		 */	
+		 */
 		 	if(ae.getSource()==colorFondo){
 		 		ElegirColor myColor=new ElegirColor(this,"Elegir color...",true,"fondo");
 		 	}
@@ -333,32 +333,32 @@ class Ventana extends JFrame implements ActionListener
 	           		JFileChooser fc=new JFileChooser(System.getProperty("user.dir"));
 		 			fc.showOpenDialog(this);
 		 			File Abrir=fc.getSelectedFile(); //Devuelve el File que vamos a leerName
-		 			
+
 		 			if(Abrir!=null)
 		 			{
 		 				nombre=fc.getSelectedFile().getName();
 		 			}
-		 	
+
 		 			if(Abrir!=null)
 		 			{
-		 				Texto.setText("");	
+		 				Texto.setText("");
 		 				FileReader Fichero=new FileReader(Abrir);
 		 				BufferedReader leer=new BufferedReader(Fichero);
 		 				while((Text=leer.readLine())!=null)
 		 					{
 		 					 Texto.append(Text+ "\n"); //append Concatena la linea leida
 		 					}
-		 					
+
 		 		  		leer.close();
 		 			}
-		 			
+
 		 		}
 		 		catch(IOException ioe)
 					{
 					  System.out.println(ioe);
 					}
 		 }
-		 
+
 		 void Guardar ()
 		 {
 		 		String Text="";
@@ -374,14 +374,14 @@ class Ventana extends JFrame implements ActionListener
 			 			Guardx.write(Texto.getText());
 			 			Guardx.close();
 		 		    }
-		 				 			
+
 		 		 }
 		 	   catch(IOException ioe)
 					{
 					  System.out.println(ioe);
-					}	
+					}
 		 }
-		 
+
 	  void imprimir ()
        {
        	   String todo=Texto.getText();
@@ -404,7 +404,7 @@ class Ventana extends JFrame implements ActionListener
 	     	  	pg.dispose (); //Finalizar pagina
 	     	  	pjob.end(); //Termina trabajo y escupe pagina
        }
-		 
+
 		/* public static void main (String []args)
 		 {
 		 	new Ventana();

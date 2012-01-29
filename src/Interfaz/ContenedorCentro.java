@@ -25,10 +25,10 @@ public class ContenedorCentro extends JPanel {
         repaint();
 	}
 	public void setColor(Color color){
-		
+
 	}
     public void setFondo(ImageIcon imagen){
-		
+
 	}
-    
+
 }

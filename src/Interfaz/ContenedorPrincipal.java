@@ -18,38 +18,38 @@ public class ContenedorPrincipal extends JPanel{
 	private ContenedorCentro CCen;
 	private Dimension d;
 	public ContenedorPrincipal(Dimension dim){
-		d=dim;	
+		d=dim;
 		setBounds(0,0, dim.width, dim.height);
 		setLayout(null);
 		iniciarContenedores();
 		setOpaque(true);
         setVisible(true);
-		
+
 	}
 	public void iniciarContenedores(){
 		/*
 		 * Creamos los paneles que contendra nuestra ventana principal
-		 */		
+		 */
 		CIzq=new ContenedorIzquierdo(d);
 		CDer=new ContenedorDerecho(d);
 		CCen=new ContenedorCentro(d);
 		/*
-		 * Ponemos bordes a nuestros a los paneles 
-		 */		 		
+		 * Ponemos bordes a nuestros a los paneles
+		 */
 		CCen.setBorder(new SoftBevelBorder(BevelBorder.LOWERED));
-		CDer.setBorder(new TitledBorder("Template"));	
+		CDer.setBorder(new TitledBorder("Template"));
 		CIzq.setBorder(new TitledBorder("Diaposiivas"));
-		
+
 		/*
 		 * insertamos nuestros paneles a la ventana principal
 		 */
-					
+
 		add(CIzq);
 		add(CCen);
 		add(CDer);
 		repaint();
-		
-	
+
+
 	}
 /*	public static void main(String[] args) {
 		   Dimension dim=Toolkit.getDefaultToolkit().getScreenSize();

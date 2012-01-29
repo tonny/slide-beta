@@ -15,6 +15,6 @@ public class DisenioSimple extends Disenio {
 		disenio=dibujar;
 		repaint();
 	}
-    
-    
+
+
 }
