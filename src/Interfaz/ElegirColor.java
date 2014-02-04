@@ -11,11 +11,11 @@ class ElegirColor extends JDialog implements ActionListener
 	JButton btAceptar=new JButton("Aceptar");
 	Ventana ed;
 	String tipo;
-	
+
 ElegirColor(JFrame Dcolor,String s,boolean b,String tip)
  {
  	super(Dcolor);
- 	
+
  	ed=(Ventana)Dcolor;
  	setLayout(new FlowLayout());
  	add(jcolor);
@@ -40,7 +40,7 @@ ElegirColor(JFrame Dcolor,String s,boolean b,String tip)
 			ed.Texto.setForeground(jcolor.getColor());
 			ed.Errores.setForeground(jcolor.getColor());
 			ed.colorTexto.setBackground(jcolor.getColor());
-			}		
+			}
 		}
 		dispose();
 	}

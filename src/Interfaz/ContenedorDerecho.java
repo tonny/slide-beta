@@ -40,33 +40,33 @@ public class ContenedorDerecho extends JPanel{
 		pa.add("template",template);
 		add(pa);
 	}
-	public void crearSlide(){	 
+	public void crearSlide(){
 	   JPanel pan=new JPanel();
 	   pan.setBounds(10, 10, 200,100);
 	   pan.setBackground(Color.BLACK);
 	 //  pan.setLayout(null);
 	   template.add(pan);
-	   
+
 	   JPanel pan2=new JPanel();
 	   pan2.setBounds(10, 120, 200,100);
 	   pan2.setBackground(Color.DARK_GRAY);
 	 //  pan.setLayout(null);
 	   template.add(pan2);
-	   
+
 	   repaint();
 	}
-	public void crearDisenio(){	 
-		
-		   Disenio pan=new Disenio();		 
+	public void crearDisenio(){
+
+		   Disenio pan=new Disenio();
 		   pan.setLocation(10,10);
-		   pan.dibujar(1);		  		
+		   pan.dibujar(1);
 		   disenio.add(pan);
-		   
+
 		   Disenio pan2=new Disenio();
 		   pan2.setLocation(10,130);
 		   pan2.dibujar(2);
 		   disenio.add(pan2);
-		   
+
 		   repaint();
 		}
 /*	public static void main(String[] args) {
